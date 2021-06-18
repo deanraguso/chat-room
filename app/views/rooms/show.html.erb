@@ -13,10 +13,11 @@
 
 <h1>Messages</h1>
 
-<% @messages.each do |message| %>
-    <%= message.content %>
-    <br>
-<% end %>
+<ul id="messages">
+  <% @messages.each do |message| %>
+        <li><%= message.content %></li>
+  <% end %>
+</ul>
 
 <%= form_with(model: @message) do |form| %>
   <% if @message.errors.any? %>

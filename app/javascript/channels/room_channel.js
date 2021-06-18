@@ -16,7 +16,8 @@ if(url.indexOf("rooms/") != -1){
     },
 
     received(data) {
-      console.log(data);
+      document.querySelector("ul#messages").insertAdjacentHTML("beforeend",
+      `<li>${data.content}</li>`)
       // Called when there's incoming data on the websocket for this channel
     }
   });
