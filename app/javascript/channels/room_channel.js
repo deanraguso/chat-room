@@ -4,10 +4,10 @@ let url = window.location.href
 let room_id = parseInt( url.substring(url.search("rooms/") + 6) );
 
 if(url.indexOf("rooms/") != -1){
-  console.log(`Subscribed to ${room_id}`)
 
   consumer.subscriptions.create({"channel": "RoomChannel", "room_id": room_id}, {
     connected() {
+      console.log(`Subscribed to ${room_id}`)
       // Called when the subscription is ready for use on the server
     },
 
